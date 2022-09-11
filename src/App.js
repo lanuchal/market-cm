@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {  Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import "./App.css";
 import SignIn from "./components/SignIn";
@@ -8,6 +8,7 @@ import Market from "./components/Market";
 import PageNotFound from "./components/PageNotFound";
 import SeaMarket from "./components/SeaMarket";
 import Header from "./components/common/Header";
+import Store from "./components/Store";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} exact></Route>
         <Route path="/market" element={<Market />} exact></Route>
         <Route path="/seaechmarket" element={<SeaMarket />} exact></Route>
+        <Route path="/store" element={<Store />} exact></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>

@@ -1,10 +1,8 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { api } from "../../constants/Api";
 import { Link } from "react-router-dom";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-
+// import logo from '../../../assets/logo512.png'
 function Header() {
   const navigate = useNavigate();
   const [data, setData] = useState("");
@@ -12,7 +10,6 @@ function Header() {
 
   useEffect(() => {
     const key_name = localStorage.getItem("key_name");
-    console.log("key_name", key_name);
     setName(key_name);
   }, []);
 
@@ -23,6 +20,7 @@ function Header() {
       showDenyButton: true,
       showCancelButton: false,
       confirmButtonText: "ยืนยัน",
+      confirmButtonColor: "#04af6e",
       denyButtonText: `ยกเลิก`,
     }).then((result) => {
       if (result.isConfirmed) {
@@ -32,6 +30,7 @@ function Header() {
           icon: "success",
           title: `ออกจากระบบสำเร็จ`,
           showConfirmButton: false,
+          confirmButtonColor: "#fff",
           timer: 1500,
         }).then(() => {
           window.location.reload(false);
@@ -44,7 +43,12 @@ function Header() {
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <Link className="navbar-brand ps-5" to="/">
-            LOGO
+              <img
+                src="https://login.fleamarket-rmutl.com/logo-admin.png"
+                alt=""
+                className="d-block"
+                height={70}
+              />
           </Link>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <div className="navbar-nav me-auto mb-2 mb-lg-0"></div>

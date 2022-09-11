@@ -14,44 +14,64 @@ function SignUp() {
 
   const onclick_signup = () => {
     if (!name || !tel || !mail || !passWord || !cPassWord) {
-      Swal.fire("กรอกข้อมูลไม่ครบ", "กรุณากรอกข้อมูลให้ครบถ้วน", "question");
+      Swal.fire({
+        icon: "question",
+        title: `กรอกข้อมูลไม่ครบ`,
+        text: `กรุณากรอกข้อมูลให้ครบถ้วน`,
+        showConfirmButton: false,
+        timer: 3000,
+      })
+
     } else {
       if (passWord !== cPassWord) {
-        Swal.fire("รหัสผ่านไม่ตรงกัน", "กรุณากรอกรหัสผ่านให้ตรงกัน", "error");
+        Swal.fire({
+          icon: "error",
+          title: `รหัสผ่านไม่ตรงกัน`,
+          text: `กรุณากรอกรหัสผ่านให้ตรงกัน`,
+          showConfirmButton: false,
+          timer: 3000,
+        })
       } else {
-        if (tel.length != 10) {
-          Swal.fire(
-            "เบอร์โทรศัพไม่ถูกต้อง",
-            "กรุณากรอกเบอร์โทรศัพให้ถูกต้อง",
-            "error"
-          );
+        if (tel.length !== 10) {
+          Swal.fire({
+            icon: "error",
+            title: `เบอร์โทรศัพไม่ถูกต้อง`,
+            text: `กรุณากรอกเบอร์โทรศัพให้ถูกต้อง`,
+            showConfirmButton: false,
+            timer: 3000,
+          })
+
         } else {
           axios
             .post(api + "api/auth/register", {
               name: name,
               email: mail,
               password: passWord,
-              permission: "MARKET",
+              permission: "GENERAL",
               tel: tel,
             })
             .then((res) => {
               if (res.data.status) {
                 // console.log("success");
                 // history.push("/signin");
-
-                Swal.fire(
-                  "สมัครสมาชิกสำเร็จ",
-                  "คุฯได้สมัครเป็นสมาชิกแล้ว ไปยังหน้าเข้าสู่ระบบ",
-                  "success"
-                ).then((res) => {
+                Swal.fire({
+                  icon: "success",
+                  title: `สมัครสมาชิกสำเร็จ`,
+                  text: `คุณได้สมัครเป็นสมาชิกแล้ว ไปยังหน้าเข้าสู่ระบบ`,
+                  showConfirmButton: false,
+                  timer: 3000,
+                }).then((r)=>{
                   navigate("/signin");
-                });
+                })
               } else {
-                Swal.fire(
-                  "อีเมลนี้มีผู้ใช้งานแล้ว",
-                  "กรุณากรอกใช้อีเมลอื่น",
-                  "question"
-                );
+                Swal.fire({
+                  icon: "question",
+                  title: `อีเมลนี้มีผู้ใช้งานแล้ว`,
+                  text: `กรุณากรอกใช้อีเมลอื่น`,
+                  showConfirmButton: false,
+                  timer: 3000,
+                })
+
               }
             })
             .catch((e) => {

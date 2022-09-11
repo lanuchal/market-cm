@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation ,useNavigate} from "react-router-dom";
 import { api } from "../constants/Api";
 import Header from "./common/Header";
@@ -70,6 +70,10 @@ function Market() {
       });
   };
   // console.log(store.length);
+  const selectMarket = (data) => {
+    navigate("/market", { state: { id: data } });
+  };
+
   return (
     <div className="position-relative">
       <div className="head-bg shadow ">
@@ -189,7 +193,7 @@ function Market() {
           <div className="container px-5">
             <div className="row shadow p-3 mb-5 bg-white rounded mt-3">
               <div className="d-flex align-items-center scroll">
-                {dataImg.length != 0 ? (
+                {dataImg.length !== 0 ? (
                   <>
                     {dataImg.map((index, key) => {
                       return (
@@ -211,11 +215,13 @@ function Market() {
               <h4 className="px-5 mt-4 text-color">
                 <strong>ร้านค้าในตลาด</strong>{" "}
               </h4>
-              {store.length != 0 ? (
+              {store.length !== 0 ? (
                 <>
                   {store.map((index, key) => {
                     return (
-                      <div key={key} className="col-md-6 p-3">
+                      <div key={key} className="col-md-6 p-3 curcer" onClick={()=>{
+                        navigate("/store", { state: { id: index.id } });
+                      }}>
                         <div className="row">
                           <div className="col-md-6">
                             <img

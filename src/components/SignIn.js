@@ -9,7 +9,6 @@ function SignIn() {
   const navigate = useNavigate();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
-  const [items, setItems] = useState();
 
   const signIn = () => {
     axios
@@ -21,21 +20,23 @@ function SignIn() {
         const { data } = res;
         if (data.status) {
           Swal.fire({
-            position: "เข้าสู่ระบบ",
             icon: "success",
-            title: `เข้าสู่ระบบสำเร็จ ยินดีต้อนรับ คุณ${data.data.user.name}`,
+            title: `เข้าสู่ระบบ`,
+            text: `เข้าสู่ระบบสำเร็จ ยินดีต้อนรับ คุณ${data.data.user.name}`,
             showConfirmButton: false,
-            timer: 1500,
+            timer: 3000,
           }).then(() => {
             localStorage.setItem("key_name", data.data.user.name);
             navigate("/");
           });
         } else {
-          Swal.fire(
-            "เข้าสู่ระบบ",
-            "เข้าสู่ระบบไม่สำเร็จ รหัสผ่านไม่ถูกต้อง",
-            "error"
-          );
+          Swal.fire({
+            icon: "error",
+            title: `เข้าสู่ระบบ`,
+            text: `เข้าสู่ระบบไม่สำเร็จ รหัสผ่านไม่ถูกต้อง`,
+            showConfirmButton: false,
+            timer: 3000,
+          })
         }
       })
       .catch((e) => {
