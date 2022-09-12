@@ -104,7 +104,7 @@ function Market() {
           </div>
         </div>
       </div>
-      <div className="market-bg">
+      <div className="market-bg pt-2">
         <div className="container  mt-5 mb-5">
           <div className="row pt-4">
             <div className="col-md-3 text-center">
