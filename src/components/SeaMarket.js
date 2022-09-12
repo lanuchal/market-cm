@@ -66,12 +66,12 @@ function SeaMarket() {
           <div className="col-md-11"></div>
           <div className="col-md-1 p-0 mb-3 text">
             <button
-              className="btn-search p-2 px-3 text-sm"
+              className="btn-search p-2 px-3 text-sm  nh"
               onClick={() => {
                 navigate("/");
               }}
             >
-              <p className="text-success m-0 p-0 nh">ตลาดยอดฮิต</p>
+              <p className="text-success m-0 p-0">ตลาดยอดฮิต</p>
             </button>
           </div>
         </div>

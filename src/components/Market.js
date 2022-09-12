@@ -81,12 +81,12 @@ function Market() {
         <div className="container-lg">
           <div className="row mt-2">
             <div className="col-md-6">
-              <h1 className="text-color fst-italic">
+              <h1 className="text-color fst-italic tt-ll">
                 <strong>{name}</strong>
               </h1>
             </div>
             <div className="col-md-4"></div>
-            <div className="col-md-1 p-0">
+            <div className="col-md-1 p-0 nh" >
               
               <button className="btn-search p-2 px-3 text-sm" onClick={()=>{
                 navigate("/")
@@ -94,7 +94,7 @@ function Market() {
                 <p className="text-success m-0 p-0">ตลาดยอดฮิต</p>
               </button>
             </div>
-            <div className="col-md-1 p-0">
+            <div className="col-md-1 p-0 nh">
               <button className="btn-search p-2 px-3"  onClick={()=>{
                     navigate("/seaechmarket", { state: { name: "" } });
               }}>
@@ -186,12 +186,12 @@ function Market() {
                 </div>
               </div>
             </div>
-            <div className="col-md-9 shadow p-0 rounded-4">
+            <div className="col-md-9 shadow p-0 rounded-4 bxmap">
               <MapShow m_lat={map_lt} m_lng={map_lg} />
             </div>
           </div>
-          <div className="container px-5">
-            <div className="row shadow p-3 mb-5 bg-white rounded mt-3">
+          <div className="container ">
+            <div className="row shadow p-3 mb-5 bg-white rounded mt-3 ">
               <div className="d-flex align-items-center scroll">
                 {dataImg.length !== 0 ? (
                   <>
