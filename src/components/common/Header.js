@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import logo from "./img_logo.jpg";
+import logo from "./logo_logo.png";
 function Header() {
   const navigate = useNavigate();
   const [data, setData] = useState("");
@@ -133,7 +133,7 @@ function Header() {
             <img
               src={logo}
               alt=""
-              className="d-block rounded-circle"
+              className="d-block"
               height={70}
             />
           </Link>
