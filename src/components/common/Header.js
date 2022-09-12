@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-// import logo from '../../../assets/logo512.png'
+import logo from './img_logo.jpg'
 function Header() {
   const navigate = useNavigate();
   const [data, setData] = useState("");
@@ -44,9 +44,9 @@ function Header() {
         <div className="container-fluid">
           <Link className="navbar-brand ps-5" to="/">
               <img
-                src="https://login.fleamarket-rmutl.com/logo-admin.png"
+                src={logo}
                 alt=""
-                className="d-block"
+                className="d-block rounded-circle"
                 height={70}
               />
           </Link>

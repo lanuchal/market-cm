@@ -62,7 +62,7 @@ function SeaMarket() {
     <div className="position-relative">
       <div className="head-bg shadow ">
         <Header />
-        <div className="row mt-2">
+        <div className="row mt-0">
           <div className="col-md-11"></div>
           <div className="col-md-1 p-0 mb-3 text">
             <button
@@ -71,12 +71,12 @@ function SeaMarket() {
                 navigate("/");
               }}
             >
-              <p className="text-success m-0 p-0">ตลาดยอดฮิต</p>
+              <p className="text-success m-0 p-0 nh">ตลาดยอดฮิต</p>
             </button>
           </div>
         </div>
       </div>
-      <div className="market-bg">
+      <div className="market-bg pt-1">
         <div className="container-lg  mt-5 ">
           <div className="row shadow p-1 mb-2 bg-white rounded mt-3">
             <div className="col-md-8">
@@ -119,7 +119,7 @@ function SeaMarket() {
             <div className="col-md-4 position-relative p-0">
               <div className="row">
                 <div className="box-map p-2 col-md-3">
-                  <div className="bg-map p-2">
+                  <div className="bg-map p-2 pt-4">
                     <MapShow2 m_lat={map_lt} m_lng={map_lg} />
                     <div className="shadow p-3 mb-5 bg-body  bb">
                       <strong className="text-color"> {name}</strong>
