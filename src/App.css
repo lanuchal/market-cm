@@ -12,6 +12,10 @@
 .bg-base {
   background-color: #ffffff;
 }
+a{
+  text-decoration: none;
+  color: #0003b4;
+}
 .input-search {
   width: 30rem;
   background: #ffffff 0% 0% no-repeat padding-box;

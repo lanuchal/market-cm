@@ -36,7 +36,7 @@ function SignIn() {
             text: `เข้าสู่ระบบไม่สำเร็จ รหัสผ่านไม่ถูกต้อง`,
             showConfirmButton: false,
             timer: 3000,
-          })
+          });
         }
       })
       .catch((e) => {
@@ -49,9 +49,9 @@ function SignIn() {
         <div className="container text-center">
           <div className="row">
             <div className="col-md-4"></div>
-            <div className="col-md-4 bg-white p-5 rounded-1">
+            <div className="col-md-4 bg-white p-3 rounded-1">
               <h4>เข้าสู่ระบบ</h4>
-              <div className="row text-start">
+              <div className="row text-start p-2">
                 <div className="col-12">
                   <label for="username">Email</label>
                   <input
@@ -84,6 +84,11 @@ function SignIn() {
                     ยกเลิก
                   </Link>
                 </div>
+              </div>
+              <div className="text-end mt-2">
+                <a href="https://login.fleamarket-rmutl.com/">
+                  ระบบจัดการตลาดเชียงใหม่
+                </a>
               </div>
             </div>
           </div>
