@@ -245,12 +245,12 @@ function Market() {
                             <h5>
                               ร้าน <strong>{index.name}</strong>{" "}
                             </h5>
-                            <span >
-                              โซน :{" "}
+                            <span>
+                              โซน :
                               {index.area ? (
                                 <span className="text-success">index.area</span>
                               ) : (
-                                <span className="text-danger">ปิดกิจการ</span>
+                                <span className="text-danger">ไม่พร้อมให้บริการ</span>
                               )}
                             </span>
                             <br />

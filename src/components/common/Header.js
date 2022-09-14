@@ -7,10 +7,23 @@ function Header() {
   const navigate = useNavigate();
   const [data, setData] = useState("");
   const [name, setName] = useState(null);
+  const [status_, setStatus_] = useState(null);
 
   useEffect(() => {
     const key_name = localStorage.getItem("key_name");
+    const status = localStorage.getItem("status");
     setName(key_name);
+    setStatus_(() => {
+      if (status == "SUPERADMIN") {
+        return "ผู้ดูแลระบบ";
+      } else if (status == "MARKET") {
+        return "ผู้ดูแลตลาด";
+      } else if (status == "STORE") {
+        return "ผู้ดูแลร้านค้า";
+      } else {
+        return "ผู้ใช้ทั่วไป";
+      }
+    });
   }, []);
 
   const signOut = () => {
@@ -25,6 +38,7 @@ function Header() {
     }).then((result) => {
       if (result.isConfirmed) {
         localStorage.removeItem("key_name");
+        localStorage.removeItem("status");
         setName("");
         Swal.fire({
           icon: "success",
@@ -43,12 +57,7 @@ function Header() {
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            <img
-              src={logo}
-              alt=""
-              className="d-block"
-              height={70}
-            />
+            <img src={logo} alt="" className="d-block" height={70} />
           </Link>
           <button
             className="navbar-toggler bg-warning text-light"
@@ -96,6 +105,12 @@ function Header() {
                     คุณ {name}
                   </Link>
                 </li>
+                <li className="nav-item text-center px-2">
+                  <Link className="nav-link text-info" to="/">
+                    {status_}
+                  </Link>
+                </li>
+
                 <li className="nav-item text-center px-2">
                   <Link
                     className="nav-link text-danger"

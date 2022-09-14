@@ -28,6 +28,7 @@ function SignIn() {
             timer: 3000,
           }).then(() => {
             localStorage.setItem("key_name", data.data.user.name);
+            localStorage.setItem("status", data.data.user.permission);
             navigate("/");
           });
         } else {
@@ -58,15 +59,10 @@ function SignIn() {
         </Link>
         <div className="container text-center">
           <div className="row">
-<<<<<<< HEAD
-            <div className="col-md-4"></div>
-            <div className="col-md-4 bg-white p-3 rounded-1">
-=======
             <div className="col-md-4"> </div>
             <div className="col-md-4 bg-white p-4 rounded-1">
->>>>>>> 1e2b1ee (sssssssssssssssss)
               <h4>เข้าสู่ระบบ</h4>
-              <div className="row text-start p-2">
+              <div className="row text-start">
                 <div className="col-12">
                   <label for="username">อีเมล</label>
                   <input
@@ -100,11 +96,7 @@ function SignIn() {
                   </Link>
                 </div>
               </div>
-<<<<<<< HEAD
-              <div className="text-end mt-2">
-=======
               <div className="text-end mt-3">
->>>>>>> 1e2b1ee (sssssssssssssssss)
                 <a href="https://login.fleamarket-rmutl.com/">
                   ระบบจัดการตลาดเชียงใหม่
                 </a>

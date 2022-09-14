@@ -41,7 +41,7 @@ a{
 .crop {
   background-color: hsla(0, 0%, 0%, 0.6);
   color: #ffffff;
-  height: 100vh;
+  min-height: 100vh;
 }
 .header-market {
   margin-top: 10%;
@@ -275,5 +275,11 @@ a{
   .box-map0 {
     /* min-height: 86vh; */
     margin-bottom: 0rem;
+  }
+  .home-bg{
+    height: 130vh;
+  }
+  .crop{
+    height: 130vh;
   }
 }

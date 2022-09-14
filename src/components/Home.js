@@ -53,7 +53,7 @@ function Home() {
                 <h1>ตลาดเชียงใหม่</h1>
                 <div>เว็ปแอพพลิเคชั่น </div>
                 <div>การจัดการตลาดนัด</div>
-                <div>(เชียงใหม่).</div>
+                <div>( เชียงใหม่ )</div>
                 <button
                   className="btn-search-2"
                   onClick={() => {
@@ -63,7 +63,7 @@ function Home() {
                   ค้นหาตลาด
                 </button>
               </div>
-              <div className="col-md-6 mt-3">
+              <div className="col-md-6 mt-2">
                 <div className="mt-5">
                   <Carousel
                     slides={slides}
