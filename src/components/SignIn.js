@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { api } from "../constants/Api";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import logo from "./common/logo_logo.png";
 
 function SignIn() {
   const navigate = useNavigate();
@@ -46,14 +47,28 @@ function SignIn() {
   return (
     <div className="home-bg">
       <div className="home-bg3 d-flex justify-content-center d-flex align-items-center">
+        <Link to="/">
+          <img
+            src={logo}
+            alt=""
+            className="d-block"
+            height={70}
+            class="img-logo-as"
+          />
+        </Link>
         <div className="container text-center">
           <div className="row">
+<<<<<<< HEAD
             <div className="col-md-4"></div>
             <div className="col-md-4 bg-white p-3 rounded-1">
+=======
+            <div className="col-md-4"> </div>
+            <div className="col-md-4 bg-white p-4 rounded-1">
+>>>>>>> 1e2b1ee (sssssssssssssssss)
               <h4>เข้าสู่ระบบ</h4>
               <div className="row text-start p-2">
                 <div className="col-12">
-                  <label for="username">Email</label>
+                  <label for="username">อีเมล</label>
                   <input
                     className="form-control mt-2"
                     type="text"
@@ -63,7 +78,7 @@ function SignIn() {
                   />
                 </div>
                 <div className="col-12 mt-2">
-                  <label for="username">Password</label>
+                  <label for="username">รหัสผ่าน</label>
                   <input
                     className="form-control mt-2"
                     type="password"
@@ -85,7 +100,11 @@ function SignIn() {
                   </Link>
                 </div>
               </div>
+<<<<<<< HEAD
               <div className="text-end mt-2">
+=======
+              <div className="text-end mt-3">
+>>>>>>> 1e2b1ee (sssssssssssssssss)
                 <a href="https://login.fleamarket-rmutl.com/">
                   ระบบจัดการตลาดเชียงใหม่
                 </a>

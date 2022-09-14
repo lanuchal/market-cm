@@ -225,6 +225,12 @@ a{
 .test {
   color: #04af6e;
 }
+.img-logo-as{
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+}
 /* 767 */
 @media screen and (max-width: 767px) {
   .box-map {

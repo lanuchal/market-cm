@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import { api } from "../constants/Api";
 import { Link, useNavigate } from "react-router-dom";
+import logo from "./common/logo_logo.png";
 // รหัส เบอร์
 function SignUp() {
   const navigate = useNavigate();
@@ -84,6 +85,15 @@ function SignUp() {
   return (
     <div className="home-bg">
       <div className="home-bg3 d-flex justify-content-center d-flex align-items-center">
+      <Link to="/">
+          <img
+            src={logo}
+            alt=""
+            className="d-block"
+            height={70}
+            class="img-logo-as"
+          />
+        </Link>
         <div className="container text-center">
           <div className="row">
             <div className="col-md-3"></div>

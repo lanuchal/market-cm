@@ -21,14 +21,17 @@ function Home() {
 
   let slides = data.map((index, key) => {
     return (
-      <div className="curcer h-100">
-        <img
-          src={index.img != null ? index.img : null_img}
-          alt={key + 1}
-          onClick={() => {
-            selectMarket(index.id);
-          }}
-        />
+      <div className="text-center p-2">
+        <h5><strong>{index.name}</strong> </h5>
+        <div className="curcer h-100 rounded">
+          <img
+            src={index.img != null ? index.img : null_img}
+            alt={key + 1}
+            onClick={() => {
+              selectMarket(index.id);
+            }}
+          />
+        </div>
       </div>
     );
   });
@@ -60,7 +63,7 @@ function Home() {
                   ค้นหาตลาด
                 </button>
               </div>
-              <div className="col-md-6 mt-5">
+              <div className="col-md-6 mt-3">
                 <div className="mt-5">
                   <Carousel
                     slides={slides}

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useLocation ,useNavigate} from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { api } from "../constants/Api";
 import Header from "./common/Header";
 import MapShow from "./MapShow";
@@ -86,18 +86,23 @@ function Market() {
               </h1>
             </div>
             <div className="col-md-4"></div>
-            <div className="col-md-1 p-0 nh" >
-              
-              <button className="btn-search p-2 px-3 text-sm" onClick={()=>{
-                navigate("/")
-              }}>
+            <div className="col-md-1 p-0 nh">
+              <button
+                className="btn-search p-2 px-3 text-sm"
+                onClick={() => {
+                  navigate("/");
+                }}
+              >
                 <p className="text-success m-0 p-0">ตลาดยอดฮิต</p>
               </button>
             </div>
             <div className="col-md-1 p-0 nh">
-              <button className="btn-search p-2 px-3"  onClick={()=>{
-                    navigate("/seaechmarket", { state: { name: "" } });
-              }}>
+              <button
+                className="btn-search p-2 px-3"
+                onClick={() => {
+                  navigate("/seaechmarket", { state: { name: "" } });
+                }}
+              >
                 <p className="text-success m-0 p-0">ค้นหาตลาด</p>
               </button>
             </div>
@@ -108,8 +113,10 @@ function Market() {
         <div className="container  mt-5 mb-5">
           <div className="row pt-4">
             <div className="col-md-3 text-center">
-              <h3 className="">ข้อมูลตลาด</h3>
-              <div className="shadow p-3 mb-5 bg-body rounded-2">
+              <div className="shadow p-3 mb-3 mt-3 bg-body rounded-2">
+                <h4 className="text-success">
+                  <strong>ข้อมูลตลาด</strong>{" "}
+                </h4>
                 <div className="row text-color text-start">
                   <div className="col-4">
                     <b>ชื่อ</b>
@@ -219,9 +226,13 @@ function Market() {
                 <>
                   {store.map((index, key) => {
                     return (
-                      <div key={key} className="col-md-6 p-3 curcer" onClick={()=>{
-                        navigate("/store", { state: { id: index.id } });
-                      }}>
+                      <div
+                        key={key}
+                        className="col-md-6 p-3 curcer"
+                        onClick={() => {
+                          navigate("/store", { state: { id: index.id } });
+                        }}
+                      >
                         <div className="row">
                           <div className="col-md-6">
                             <img
@@ -234,7 +245,16 @@ function Market() {
                             <h5>
                               ร้าน <strong>{index.name}</strong>{" "}
                             </h5>
+                            <span >
+                              โซน :{" "}
+                              {index.area ? (
+                                <span className="text-success">index.area</span>
+                              ) : (
+                                <span className="text-danger">ปิดกิจการ</span>
+                              )}
+                            </span>
                             <br />
+                            <p></p>
                             รายละเอียด
                             <br />
                             {index.details}
@@ -245,7 +265,9 @@ function Market() {
                   })}
                 </>
               ) : (
-                <></>
+                <div className="text-center text-danger mb-3">
+                  ยังไม่มีข้อมูลร้านค้าในตลาด
+                </div>
               )}
             </div>
           </div>
