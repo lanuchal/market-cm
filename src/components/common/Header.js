@@ -17,9 +17,9 @@ function Header() {
       if (status == "SUPERADMIN") {
         return "ผู้ดูแลระบบ";
       } else if (status == "MARKET") {
-        return "ผู้ดูแลตลาด";
+        return "เจ้าของตลาด";
       } else if (status == "STORE") {
-        return "ผู้ดูแลร้านค้า";
+        return "พ่อค้า-แม่ค้า";
       } else {
         return "ผู้ใช้ทั่วไป";
       }
