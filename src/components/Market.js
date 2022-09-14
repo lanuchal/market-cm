@@ -248,9 +248,9 @@ function Market() {
                             <span>
                               โซน :
                               {index.area ? (
-                                <span className="text-success">index.area</span>
+                                <span className="text-success">&nbsp;{index.area}</span>
                               ) : (
-                                <span className="text-danger">ไม่พร้อมให้บริการ</span>
+                                <span className="text-danger">&nbsp;ไม่พร้อมให้บริการ</span>
                               )}
                             </span>
                             <br />
