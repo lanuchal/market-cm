@@ -21,7 +21,7 @@ function Header() {
       } else if (status == "STORE") {
         return "พ่อค้า-แม่ค้า";
       } else {
-        return "ผู้ใช้ทั่วไป";
+        return "ลูกค้า";
       }
     });
   }, []);
