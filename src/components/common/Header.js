@@ -95,25 +95,13 @@ function Header() {
             </form>
             {name != null ? (
               <ul className="navbar-nav mb-lg-0">
-                <li className="nav-item text-center px-2">
-                  <Link className="nav-link text-warning" to="/">
-                    ยินดีต้อนรับ
-                  </Link>
-                </li>
-                <li className="nav-item text-center px-2">
-                  <Link className="nav-link text-warning" to="/">
-                    คุณ {name}
-                  </Link>
-                </li>
-                <li className="nav-item text-center px-2">
-                  <Link className="nav-link text-info" to="/">
-                    {status_}
-                  </Link>
-                </li>
+                <li className="nav-item text-center px-2"><p className="text-warning mt-3">ยินดีต้อนรับ</p> </li>
+                <li className="nav-item text-center px-2"><p className="text-warning mt-3">คุณ {name}</p> </li>
+                <li className="nav-item text-center px-2"><p className="text-info mt-3">{status_}</p> </li>
 
                 <li className="nav-item text-center px-2">
                   <Link
-                    className="nav-link text-danger"
+                    className="nav-link text-danger mt-2"
                     to="/"
                     onClick={() => signOut()}
                   >
