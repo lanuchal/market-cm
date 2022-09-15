@@ -29,7 +29,7 @@ function Store() {
 
   const getImgs = async () => {
     await axios
-      .get(api + "api/store/listimage?market_id=" + location.state.id)
+      .get(api + "api/store/listimage?store_id=" + location.state.id)
       .then((res) => {
         const { data } = res;
         const datas = data.data;
@@ -81,13 +81,16 @@ function Store() {
             <div className="col-md-12 text-color m-4">
               <h4> <strong>รูปภาพเพิ่มเติม</strong> </h4>
             </div>
-            {dataImg.map((index, key) => {
+
+            {(dataImg.length >1)? dataImg.map((index, key) => {
               return (
                 <div className="col-md-4 p-2" key={key}>
                   <img src={index.path} alt="" className="d-block w-100" />
                 </div>
               );
-            })}
+            }):<div className="text-danger mt-2 mb-2 text-center">
+                  ยังไม่มีรูปภาพในร้านค้า
+              </div>}
           </div>
         </div>
       </div>
